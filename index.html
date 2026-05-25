@@ -31,9 +31,12 @@
     header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 20px;
       border-bottom: 1px solid var(--line);
       padding-bottom: 15px;
       margin-bottom: 40px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -41,6 +44,10 @@
       text-decoration: none;
       color: var(--text);
       font-family: Arial, sans-serif;
+    }
+
+    nav a:first-child {
+      margin-left: 0;
     }
 
     h1 {
@@ -65,6 +72,7 @@
     .time {
       color: var(--muted);
       font-family: Arial, sans-serif;
+      margin-bottom: 5px;
     }
 
     .skills span {
@@ -82,10 +90,35 @@
       text-decoration: none;
     }
 
+    .contact a:hover,
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .focus-list {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
     footer {
       margin-top: 60px;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 12px 0 0;
+      }
     }
   </style>
 </head>
@@ -96,70 +129,72 @@
     <header>
       <div>Lebenslauf</div>
       <nav>
-        Profil
-        Erfahrung
-        Ausbildung
-        Kontakt
+        <a href="#profil">Profil</a>
+        <a href="#erfahrung">Erfahrung</a>
+        <a href="#ausbildung">Ausbildung</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
     </header>
 
     <section class="hero">
       <h1>Robin Philipp Kinzel</h1>
       <p>
-        Ihr juristisch, technischer Begleiter. 
-        Ich unterstütze Unternehmen und Privatpersonen bei der Umsetzung ihrer juristischer Anliegen mit der Verknüpfung technischer Lösungen.
+        Ihr juristisch-technischer Begleiter. 
+        Ich unterstütze Unternehmen und Privatpersonen bei der Umsetzung juristischer Anliegen
+        mit der Verknüpfung technischer Lösungen.
       </p>
     </section>
 
     <section id="profil">
-      <h2>Das Wichtigste zuerst:</h2>
+      <h2>Das Wichtigste zuerst</h2>
       <p>
-        Ich bin 27 Jahre alt, bin derzeit in einer Limburger Kanzlei als wissenschaflticher Mitarbeiteiter tätig und habe als Tätigkeitsschwerpunkte:
-          - Wirtschaftsstrafrecht/ Compliance-Beratung 
-          - allgemeines Strafrecht und Strafprozessrecht
-          - hessisches Verwaltungsrecht
-          - allgemeines Zivil- und Zivilprzessrecht
+        Ich bin 27 Jahre alt und derzeit in einer Limburger Kanzlei als wissenschaftlicher Mitarbeiter tätig.
       </p>
+      <p>Meine Tätigkeitsschwerpunkte sind:</p>
+      <ul class="focus-list">
+        <li>Wirtschaftsstrafrecht / Compliance-Beratung</li>
+        <li>Allgemeines Strafrecht und Strafprozessrecht</li>
+        <li>Hessisches Verwaltungsrecht</li>
+        <li>Allgemeines Zivil- und Zivilprozessrecht</li>
+      </ul>
     </section>
 
     <section id="erfahrung">
       <h2>Berufserfahrung</h2>
 
       <div class="entry">
-        <div class="time">2023 - heute</div>
+        <div class="time">2023 – heute</div>
         <strong>Wissenschaftlicher Mitarbeiter</strong> – Kanzlei Limburg
         <ul>
           <li>Schwerpunkt: Zivilprozessrecht</li>
           <li>Schwerpunkt: Verwaltungsrecht</li>
-          <li>Schwerpunkt: allgemeines Strafrecht</li>
+          <li>Schwerpunkt: Allgemeines Strafrecht</li>
         </ul>
       </div>
 
       <div class="entry">
         <div class="time">2022 – 2023</div>
-        <strong>Juristischer Mitarbeiter</strong> – Hengeler & Müller (FFM)
+        <strong>Juristischer Mitarbeiter</strong> – Hengeler &amp; Müller (Frankfurt am Main)
         <ul>
           <li>Prozessanalyse</li>
           <li>Compliance</li>
           <li>Beratung</li>
         </ul>
       </div>
-
     </section>
 
     <section id="ausbildung">
       <h2>Ausbildung</h2>
 
       <div class="entry">
-        <div class="time">2017 - 2022</div>
+        <div class="time">2017 – 2022</div>
         <strong>1. Staatsexamen</strong> – Universität Gießen
       </div>
 
       <div class="entry">
         <div class="time">2009 – 2017</div>
-        <strong>Abitur</strong> – Fürst-Johann-Ludwig Schule
+        <strong>Abitur</strong> – Fürst-Johann-Ludwig-Schule
       </div>
-
     </section>
 
     <section>
@@ -175,13 +210,18 @@
     <section id="kontakt" class="contact">
       <h2>Kontakt</h2>
       <p>
-        Email: mailto:max@email.de<br>
-        LinkedIn: #"_blank">linkedin.com/in/deinname</a>
+        E-Mail:
+        <a href="mailto:robin@example.de">robin@example.de</a>
+        <br>
+        LinkedIn:
+        <a href="https://linkedin.com/in/deinname" target="_blank" rel="noopener noreferrer">
+          linkedin.com/in/deinname
+        </a>
       </p>
     </section>
 
     <footer>
-      © 2026 Max Mustermann
+      © 2026 Robin Philipp Kinzel
     </footer>
 
   </div>
