@@ -5,23 +5,35 @@
   <title>Lebenslauf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
-    body {
+    /* WICHTIG: sorgt dafür, dass 100% Höhe funktioniert */
+    html, body {
+      height: 100%;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      background: #f8f8f8;
-      color: #333;
     }
 
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    /* Hauptcontainer */
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh; /* volle Bildschirmhöhe */
+    }
+
+    /* Sidebar links */
     .sidebar {
       width: 30%;
       background: #2c2c2c;
       color: white;
       padding: 40px;
-      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .sidebar img {
@@ -31,52 +43,48 @@
     }
 
     .sidebar h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
 
-    .sidebar p {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
+    /* Content rechts */
     .content {
       width: 70%;
       padding: 50px;
       background: white;
+      box-sizing: border-box;
+      overflow-y: auto; /* Scroll wenn Inhalt länger */
     }
 
     h2 {
       border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-      margin-top: 30px;
+      padding-bottom: 5px;
     }
 
     .section {
       margin-bottom: 30px;
     }
 
-    .job {
-      margin-bottom: 15px;
-    }
+    /* ✅ Mobile Optimierung */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
 
-    .job h3 {
-      margin: 0;
-      font-size: 18px;
+      .sidebar, .content {
+        width: 100%;
+        height: auto;
+      }
     }
-
-    .job span {
-      font-size: 13px;
-      color: gray;
-    }
-
   </style>
 </head>
 
 <body>
 
+<div class="container">
+
   <div class="sidebar">
     <img src="https://via.placeholder.com/150" alt="Profilbild">
+
     <h1>Max Mustermann</h1>
     <p>Webentwickler</p>
 
@@ -99,17 +107,11 @@
     <div class="section">
       <h2>Berufserfahrung</h2>
 
-      <div class="job">
-        <h3>Frontend Entwickler</h3>
-        <span>2022 – heute</span>
-        <p>Arbeit an Webprojekten und UI-Design.</p>
-      </div>
+      <p><strong>Frontend Entwickler</strong><br>
+      <small>2022 – heute</small></p>
 
-      <div class="job">
-        <h3>Praktikum IT</h3>
-        <span>2021 – 2022</span>
-        <p>Unterstützung bei Webentwicklung.</p>
-      </div>
+      <p><strong>Praktikum IT</strong><br>
+      <small>2021 – 2022</small></p>
 
     </div>
 
@@ -119,6 +121,8 @@
     </div>
 
   </div>
+
+</div>
 
 </body>
 </html>
