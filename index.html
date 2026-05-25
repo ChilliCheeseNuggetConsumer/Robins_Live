@@ -1,41 +1,225 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Mein Lebenslauf</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Max Mustermann – Lebenslauf</title>
+  <meta name="description" content="Persönliche Website und Lebenslauf von Max Mustermann" />
+
   <style>
+    :root {
+      --bg: #f7f7f5;
+      --paper: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: #dddddd;
+      --soft-line: #ececec;
+      --accent: #000000;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial;
-      max-width: 800px;
-      margin: 40px auto;
-      line-height: 1.6;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    /* Header */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      position: relative;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: var(--text);
+      transition: width 0.25s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 72px;
+    }
+
+    .hero-copy {
+      padding-right: 10px;
+    }
+
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
     h1 {
-      color: #2c3e50;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      margin: 0 0 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
     }
-  </style>
-</head>
-<body>
 
-  <h1>Max Mustermann</h1>
+    .lead {
+      font-size: 1.22rem;
+      max-width: 42rem;
+      color: #222222;
+      margin: 0 0 28px;
+    }
 
-  <h2>Über mich</h2>
-  <p>Ich bin ... (kurze Beschreibung)</p>
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 26px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-  <h2>Berufserfahrung</h2>
-  <ul>
-    <li>Firma XY – Position – Zeitraum</li>
-  </ul>
+    .hero-card {
+      background: var(--paper);
+      border: 1px solid var(--soft-line);
+      padding: 22px;
+    }
 
-  <h2>Kenntnisse</h2>
-  <ul>
-    <li>HTML</li>
-    <li>Excel</li>
-  </ul>
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background:
+        linear-gradient(135deg, #1a1a1a 0%, #4f4f4f 45%, #c9c9c9 100%);
+      margin-bottom: 18px;
+      filter: grayscale(100%);
+    }
 
-  <h2>Kontakt</h2>
-  <p>Email: deine@mail.de</p>
+    .quote {
+      font-size: 1rem;
+      margin: 0;
+      color: #222;
+    }
 
-</body>
-</html>
-``
+    /* Main layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 56px;
+    }
+
+    main section {
+      padding: 0 0 44px;
+      margin-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    aside section {
+      padding: 0 0 36px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    /* Experience */
+    .entry {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-top: 1px solid var(--soft-line);
+    }
+
+    .entry:first-of-type {
+      border-top: none;
+      padding-top: 8px;
+    }
+
