@@ -2,228 +2,123 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <title>Lebenslauf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robin Philipp Kinzel</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #00CED1;
-      --text: #111;
-      --muted: #665;
-      --line: #ddd;
-      --white: #fff;
-    }
-
     body {
       margin: 0;
-      font-family: Georgia, serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    header {
+      font-family: 'Inter', sans-serif;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 15px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
+      background: #f8f8f8;
+      color: #333;
     }
 
-    nav a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: var(--text);
-      font-family: Arial, sans-serif;
+    .sidebar {
+      width: 30%;
+      background: #2c2c2c;
+      color: white;
+      padding: 40px;
+      text-align: center;
     }
 
-    nav a:first-child {
-      margin-left: 0;
+    .sidebar img {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 3rem;
+    .sidebar h1 {
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
+    .sidebar p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .content {
+      width: 70%;
+      padding: 50px;
+      background: white;
+    }
+
     h2 {
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 5px;
-      margin-top: 40px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+      margin-top: 30px;
     }
 
-    .hero {
-      margin-bottom: 50px;
+    .section {
+      margin-bottom: 30px;
     }
 
-    .entry {
-      margin-bottom: 25px;
+    .job {
+      margin-bottom: 15px;
     }
 
-    .time {
-      color: var(--muted);
-      font-family: Arial, sans-serif;
-      margin-bottom: 5px;
+    .job h3 {
+      margin: 0;
+      font-size: 18px;
     }
 
-    .skills span {
-      border: 1px solid var(--line);
-      padding: 5px 10px;
-      border-radius: 20px;
-      margin-right: 8px;
-      display: inline-block;
-      margin-bottom: 8px;
-      font-family: Arial, sans-serif;
+    .job span {
+      font-size: 13px;
+      color: gray;
     }
 
-    .contact a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .contact a:hover,
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .focus-list {
-      margin-top: 12px;
-      padding-left: 20px;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 700px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 6px 12px 0 0;
-      }
-    }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <div>Lebenslauf</div>
-      <nav>
-        <a href="#profil">Profil</a>
-        <a href="#erfahrung">Erfahrung</a>
-        <a href="#ausbildung">Ausbildung</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </header>
+  <div class="sidebar">
+    <img src="https://via.placeholder.com/150" alt="Profilbild">
+    <h1>Max Mustermann</h1>
+    <p>Webentwickler</p>
 
-    <section class="hero">
-      <h1>Robin Philipp Kinzel</h1>
-      <p>
-        Ihr juristisch-technischer Begleiter. 
-        Ich unterstütze Unternehmen und Privatpersonen bei der Umsetzung juristischer Anliegen
-        mit der Verknüpfung technischer Lösungen.
-      </p>
-    </section>
+    <h3>Kontakt</h3>
+    <p>max@email.de</p>
+    <p>+49 123 456789</p>
 
-    <section id="profil">
-      <h2>Das Wichtigste zuerst</h2>
-      <p>
-        Ich bin 27 Jahre alt und derzeit in einer Limburger Kanzlei als wissenschaftlicher Mitarbeiter tätig.
-      </p>
-      <p>Meine Tätigkeitsschwerpunkte sind:</p>
-      <ul class="focus-list">
-        <li>Wirtschaftsstrafrecht / Compliance-Beratung</li>
-        <li>Allgemeines Strafrecht und Strafprozessrecht</li>
-        <li>Hessisches Verwaltungsrecht</li>
-        <li>Allgemeines Zivil- und Zivilprozessrecht</li>
-      </ul>
-    </section>
+    <h3>Skills</h3>
+    <p>HTML / CSS / JS</p>
+    <p>React / Node</p>
+  </div>
 
-    <section id="erfahrung">
+  <div class="content">
+
+    <div class="section">
+      <h2>Profil</h2>
+      <p>Motivierter Entwickler mit Erfahrung in modernen Webtechnologien.</p>
+    </div>
+
+    <div class="section">
       <h2>Berufserfahrung</h2>
 
-      <div class="entry">
-        <div class="time">2023 – heute</div>
-        <strong>Wissenschaftlicher Mitarbeiter</strong> – Kanzlei Limburg
-        <ul>
-          <li>Schwerpunkt: Zivilprozessrecht</li>
-          <li>Schwerpunkt: Verwaltungsrecht</li>
-          <li>Schwerpunkt: Allgemeines Strafrecht</li>
-        </ul>
+      <div class="job">
+        <h3>Frontend Entwickler</h3>
+        <span>2022 – heute</span>
+        <p>Arbeit an Webprojekten und UI-Design.</p>
       </div>
 
-      <div class="entry">
-        <div class="time">2022 – 2023</div>
-        <strong>Juristischer Mitarbeiter</strong> – Hengeler &amp; Müller (Frankfurt am Main)
-        <ul>
-          <li>Prozessanalyse</li>
-          <li>Compliance</li>
-          <li>Beratung</li>
-        </ul>
+      <div class="job">
+        <h3>Praktikum IT</h3>
+        <span>2021 – 2022</span>
+        <p>Unterstützung bei Webentwicklung.</p>
       </div>
-    </section>
 
-    <section id="ausbildung">
+    </div>
+
+    <div class="section">
       <h2>Ausbildung</h2>
-
-      <div class="entry">
-        <div class="time">2017 – 2022</div>
-        <strong>1. Staatsexamen</strong> – Universität Gießen
-      </div>
-
-      <div class="entry">
-        <div class="time">2009 – 2017</div>
-        <strong>Abitur</strong> – Fürst-Johann-Ludwig-Schule
-      </div>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Prozessanalyse</span>
-        <span>Compliance-Beratung</span>
-        <span>EDV</span>
-        <span>Coding</span>
-      </div>
-    </section>
-
-    <section id="kontakt" class="contact">
-      <h2>Kontakt</h2>
-      <p>
-        E-Mail:
-        <a href="mailto:robin@example.de">robin@example.de</a>
-        <br>
-        LinkedIn:
-        <a href="https://linkedin.com/in/deinname" target="_blank" rel="noopener noreferrer">
-          linkedin.com/in/deinname
-        </a>
-      </p>
-    </section>
-
-    <footer>
-      © 2026 Robin Philipp Kinzel
-    </footer>
+      <p>Studium Informatik</p>
+    </div>
 
   </div>
+
 </body>
 </html>
