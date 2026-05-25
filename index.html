@@ -1,225 +1,184 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Max Mustermann – Lebenslauf</title>
-  <meta name="description" content="Persönliche Website und Lebenslauf von Max Mustermann" />
 
   <style>
     :root {
       --bg: #f7f7f5;
-      --paper: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --line: #dddddd;
-      --soft-line: #ececec;
-      --accent: #000000;
-      --max-width: 1100px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --text: #111;
+      --muted: #666;
+      --line: #ddd;
+      --white: #fff;
     }
 
     body {
       margin: 0;
+      font-family: Georgia, serif;
       background: var(--bg);
       color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
     }
 
-    a {
+    header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .hero {
+      margin-bottom: 50px;
+    }
+
+    .entry {
+      margin-bottom: 25px;
+    }
+
+    .time {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+    }
+
+    .skills span {
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact a {
       color: var(--text);
       text-decoration: none;
     }
 
-    a:hover {
-      opacity: 0.7;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 32px 20px 80px;
-    }
-
-    /* Header */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 16px 0 28px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 40px;
-    }
-
-    .brand {
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-family: Arial, Helvetica, sans-serif;
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
       color: var(--muted);
     }
+  </style>
+</head>
 
-    .nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-    }
+<body>
+  <div class="container">
 
-    .nav a {
-      position: relative;
-    }
+    <header>
+      <div>Lebenslauf</div>
+      <nav>
+        Profil
+        Erfahrung
+        Ausbildung
+        Kontakt
+      </nav>
+    </header>
 
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 1px;
-      background: var(--text);
-      transition: width 0.25s ease;
-    }
+    <section class="hero">
+      <h1>Max Mustermann</h1>
+      <p>
+        Analytisch, strukturiert und klar.  
+        Ich unterstütze Teams dabei, komplexe Inhalte verständlich zu machen und sauber umzusetzen.
+      </p>
+    </section>
 
-    .nav a:hover::after {
-      width: 100%;
-    }
+    <section id="profil">
+      <h2>Über mich</h2>
+      <p>
+        Ich arbeite präzise, strukturiert und lösungsorientiert. Mein Fokus liegt darauf,
+        Inhalte klar darzustellen und Prozesse effizient umzusetzen.
+      </p>
+    </section>
 
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: 48px;
-      align-items: start;
-      margin-bottom: 72px;
-    }
+    <section id="erfahrung">
+      <h2>Berufserfahrung</h2>
 
-    .hero-copy {
-      padding-right: 10px;
-    }
+      <div class="entry">
+        <div class="time">2022 – heute</div>
+        <strong>Senior Position</strong> – Unternehmen GmbH
+        <ul>
+          <li>Projektverantwortung</li>
+          <li>Analyse und Planung</li>
+        </ul>
+      </div>
 
-    .eyebrow {
-      font-family: Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.76rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+      <div class="entry">
+        <div class="time">2019 – 2022</div>
+        <strong>Consultant</strong> – Firma AG
+        <ul>
+          <li>Prozessanalyse</li>
+          <li>Stakeholder-Kommunikation</li>
+        </ul>
+      </div>
 
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.4rem);
-      line-height: 0.95;
-      margin: 0 0 22px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
+    </section>
 
-    .lead {
-      font-size: 1.22rem;
-      max-width: 42rem;
-      color: #222222;
-      margin: 0 0 28px;
-    }
+    <section id="ausbildung">
+      <h2>Ausbildung</h2>
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px 22px;
-      margin-top: 26px;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+      <div class="entry">
+        <div class="time">2013 – 2016</div>
+        <strong>Master</strong> – Universität Beispiel
+      </div>
 
-    .hero-card {
-      background: var(--paper);
-      border: 1px solid var(--soft-line);
-      padding: 22px;
-    }
+      <div class="entry">
+        <div class="time">2010 – 2013</div>
+        <strong>Bachelor</strong> – Hochschule Beispiel
+      </div>
 
-    .portrait {
-      aspect-ratio: 4 / 5;
-      background:
-        linear-gradient(135deg, #1a1a1a 0%, #4f4f4f 45%, #c9c9c9 100%);
-      margin-bottom: 18px;
-      filter: grayscale(100%);
-    }
+    </section>
 
-    .quote {
-      font-size: 1rem;
-      margin: 0;
-      color: #222;
-    }
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Analyse</span>
+        <span>Projektarbeit</span>
+        <span>Kommunikation</span>
+        <span>Strukturierung</span>
+      </div>
+    </section>
 
-    /* Main layout */
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 0.9fr;
-      gap: 56px;
-    }
+    <section id="kontakt" class="contact">
+      <h2>Kontakt</h2>
+      <p>
+        Email: mailto:max@email.de<br>
+        LinkedIn: #"_blank">linkedin.com/in/deinname</a>
+      </p>
+    </section>
 
-    main section {
-      padding: 0 0 44px;
-      margin-bottom: 44px;
-      border-bottom: 1px solid var(--line);
-    }
+    <footer>
+      © 2026 Max Mustermann
+    </footer>
 
-    aside section {
-      padding: 0 0 36px;
-      margin-bottom: 36px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    h2 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      margin: 0 0 18px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-intro {
-      font-family: Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      font-size: 0.78rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin: 0 0 16px;
-      font-size: 1.02rem;
-    }
-
-    /* Experience */
-    .entry {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 20px;
-      padding: 22px 0;
-      border-top: 1px solid var(--soft-line);
-    }
-
-    .entry:first-of-type {
-      border-top: none;
-      padding-top: 8px;
-    }
-
+  </div>
+</body>
+</html>
